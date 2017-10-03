@@ -1,0 +1,154 @@
+Authorization:
+	Headers 
+	Key : Authorization
+	Value: <google Oauth2 token>
+------------------------------------
+Get Fields
+
+*Method: GET
+*Url:  /api/fields/
+
+Example:
+	/api/fields/
+
+Request (body):
+	none
+Response (body):
+[
+    {
+        "Id": 2,
+        "user_id": null,
+        "name": "Kalnujai2",
+        "location": "prie berzu",
+        "size": 5,
+        "last_action": "sejimas"
+    },
+    {
+        "Id": 3,
+        "user_id": null,
+        "name": "Kalnujai3",
+        "location": "prie misko",
+        "size": 5,
+        "last_action": "arimas"
+    }
+]
+
+Response Status codes:
+	200 OK : OK
+	404 NotFound : Fields List Not Found
+	401 Unauthorized: Unauthorized
+	500 Internal Server Error : Internal Server Error
+
+-------------------------------
+Get Field
+
+*Method: GET
+*Url:  /api/fields/{id}
+
+Example:
+	/api/fields/2
+
+Request(body):
+	none
+Response (body):
+	{
+        "Id": 2,
+        "user_id": null,
+        "name": "Kalnujai2",
+        "location": "prie berzu",
+        "size": 5,
+        "last_action": "sejimas"
+    }
+
+Response Status codes:
+	200 OK : OK
+	404 NotFound : Field Not Found
+	401 Unauthorized: Unauthorized
+	500 Internal Server Error : Internal Server Error
+
+--------------------------------
+Insert Field
+
+*Method: POST
+*Url:  /api/fields/
+
+Example:
+	/api/fields/
+
+Request (body):
+	{
+        "name": "Pavyzdys",
+        "location": "miskas",
+        "size": 10,
+        "last_action": "arimas"
+    }
+Response (body):
+	{
+        "Id": 100,
+        "user_id": null,
+        "name": "Pavyzdys",
+        "location": "miskas",
+        "size": 10,
+        "last_action": "arimas"
+    }
+
+Response Status codes:
+	200 OK : OK
+	400 BadRequest : Insert Error or Bad parameters
+	401 Unauthorized: Unauthorized
+	500 Internal Server Error : Internal Server Error
+
+-------------------------------------
+Update Field
+
+*Method: PUT
+*Url:  /api/fields/{id}
+
+Example:
+	/api/fields/100
+
+Request (body):
+	{
+        "name": "Pavyzdys1",
+        "location": "miskas",
+        "size": 10,
+        "last_action": "arimas"
+    }
+Response (body):
+	{
+        "Id": 100,
+        "user_id": null,
+        "name": "Pavyzdys1",
+        "location": "miskas",
+        "size": 10,
+        "last_action": "arimas"
+    }
+
+Response Status codes:
+	200 OK : OK
+	400 BadRequest : Update Error or Bad parameters
+	401 Unauthorized: Unauthorized
+	500 Internal Server Error : Internal Server Error
+	
+------------------------------
+Delete Field
+
+*Method: DELETE
+*Url:  /api/fields/{id}
+
+Example:
+	/api/fields/100
+
+Request (body):
+	none
+Response (body):
+	none
+
+Response Status codes:
+	200 OK : OK
+	400 BadRequest : Delete Error 
+	401 Unauthorized: Unauthorized
+	500 Internal Server Error : Internal Server Error
+	
+	
+-------------------------------------------		
